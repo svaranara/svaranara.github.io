@@ -3,38 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Svara Nara - Suara Yang Menjadi Cerita</title>
+<title>SVARA NARA - Suara Yang Mendengarkan</title>
 <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Georgia',serif; }
-  body { background:#0a0a0a; color:#fff; }
-  header { text-align:center; padding:60px 20px 40px; }
-  header h1 { color:#d4af37; font-size:52px; letter-spacing:5px; }
-  header p { color:#ccc; margin-top:10px; font-style:italic; }
-  nav { background:#111; text-align:center; padding:15px; position:sticky; top:0; }
-  nav a { color:#d4af37; text-decoration:none; margin:0 15px; font-weight:bold; }
-  .hero { text-align:center; padding:60px 20px; }
-  .hero h2 { font-size:32px; line-height:1.4; }
-  .hero p { color:#bbb; margin:20px auto; max-width:600px; line-height:1.6; }
-  .btn { display:inline-block; background:#d4af37; color:#000; padding:12px 25px; border-radius:25px; text-decoration:none; font-weight:bold; }
-  .section { padding:50px 20px; max-width:800px; margin:auto; text-align:center; }
-  .section h2 { color:#d4af37; margin-bottom:20px; font-size:28px; }
-  .section p { color:#ddd; line-height:1.7; }
-  .cards { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-top:25px; }
-  .card { background:#1a1a1a; border:1px solid #d4af37; border-radius:15px; padding:20px; width:220px; }
-  .card h3 { color:#d4af37; margin-bottom:10px; }
-  form { background:#1a1a1a; padding:25px; border-radius:15px; border:1px solid #333; text-align:left; margin-top:20px; }
-  input, textarea, select { width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #333; background:#0a0a0a; color:#fff; }
-  button { width:100%; background:#d4af37; color:#000; padding:13px; border:none; border-radius:10px; font-weight:bold; font-size:16px; }
-  footer { text-align:center; padding:30px; color:#888; font-size:14px; border-top:1px solid #222; margin-top:30px; }
-  footer a { color:#d4af37; text-decoration:none; }
+  :root{ --bg:#ffffff; --text:#222222; --judul:#111111; --card:#f9f5e8; --border:#d4af37; --muted:#777; }
+  body.dark{ --bg:#0a0a0a; --text:#f5e6c4; --judul:#d4af37; --card:#1a1a1a; --border:#d4af37; --muted:#aaa; }
+  body{ background:var(--bg); color:var(--text); font-family:Georgia, serif; margin:0; padding:0; line-height:1.8; transition:0.3s; }
+  header{ text-align:center; padding:30px 20px 10px; }
+  .topbar{ display:flex; justify-content:space-between; align-items:center; max-width:800px; margin:auto; padding:10px 20px; }
+  .topbar span{ font-size:11px; letter-spacing:3px; color:#a07d1f; font-weight:bold; }
+  #tombolTema{ background:#d4af37; border:none; padding:8px 14px; border-radius:20px; cursor:pointer; font-size:14px; }
+  h1{ color:var(--judul); font-size:42px; margin:10px 0 0; letter-spacing:3px; }
+  header p{ color:var(--muted); margin:5px 0 0; }
+  nav{ text-align:center; padding:15px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  nav a{ color:var(--judul); margin:0 12px; text-decoration:none; font-weight:bold; font-size:14px; }
+  .hero{ text-align:center; padding:40px 20px; max-width:700px; margin:auto; }
+  .hero h2{ color:var(--judul); font-size:28px; }
+  section{ max-width:700px; margin:auto; padding:20px; }
+  h3{ color:var(--judul); text-align:center; border-bottom:1px solid var(--border); padding-bottom:10px; }
+  .kartu{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:18px; margin:15px 0; }
+  .kartu h4{ margin:0 0 5px; color:var(--judul); }
+  .kartu p{ font-size:14px; color:var(--muted); margin:0 0 10px; }
+  .kartu a{ color:#a07d1f; font-weight:bold; }
+  input, textarea, select{ width:100%; padding:12px; border-radius:10px; border:1px solid var(--border); background:var(--bg); color:var(--text); box-sizing:border-box; margin-bottom:12px; }
+  .btn{ width:100%; background:#d4af37; color:#000; padding:13px; border:none; border-radius:10px; font-weight:bold; cursor:pointer; font-size:16px; }
+  footer{ text-align:center; padding:25px; color:var(--muted); font-size:13px; border-top:1px solid var(--border); margin-top:30px; }
 </style>
 </head>
 <body>
-<header><h1>SVARA NARA</h1><p>Suara Yang Menjadi Cerita</p></header>
-<nav><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kirim">Kirim Cerita</a></nav>
-<div class="hero" id="beranda"><h2>Ada suara yang tidak pernah<br>sempat diucapkan.</h2><p>Di sini, di Svara Nara, semua itu punya tempat untuk pulang. Kamu tidak sendirian. Cerita kamu aman di sini.</p><br><a class="btn" href="#kirim">Ceritakan Sekarang 🖤</a></div>
-<div class="section" id="tentang"><h2>Tentang Svara Nara</h2><p>Svara Nara adalah ruang untuk mendengarkan dan bercerita. Tempat bagi suara-suara yang selama ini diam, untuk akhirnya didengar.</p><div class="cards"><div class="card"><h3>Didengarkan</h3><p>Cerita kamu dibaca dengan hati, bukan dihakimi.</p></div><div class="card"><h3>Aman</h3><p>Boleh anonim. Identitas kamu kami jaga.</p></div><div class="card"><h3>Menemani</h3><p>Cerita kamu bisa menemani orang lain.</p></div></div></div>
-<div class="section" id="kirim"><h2>Kirim Cerita Kamu</h2><p>Tulis apa yang selama ini kamu simpan. Tidak perlu sempurna, yang penting jujur.</p><form><label>Nama Kamu (boleh samaran)</label><input type="text" placeholder="Contoh: Nara / Anonim"><label>Kategori Cerita</label><select><option>Rindu</option><option>Patah Hati</option><option>Keluarga</option><option>Persahabatan</option><option>Diri Sendiri</option><option>Lainnya</option></select><label>Cerita Kamu</label><textarea rows="6" placeholder="Tulis cerita kamu di sini..."></textarea><br><br><button type="submit">Kirim Cerita Saya</button></form></div>
-<footer><p>© 2026 Svara Nara | Suara Yang Menjadi Cerita</p><p><a href="https://instagram.com/svaranara">Instagram</a> • <a href="https://tiktok.com/@svaranara">TikTok</a></p></footer>
+<div class="topbar"><span>SVARA NARA</span><button id="tombolTema" onclick="gantiTema()">🌙 Gelap</button></div>
+<header><h1>SVARA NARA</h1><p>Suara Yang Mendengarkan • Ruang Belajar Menulis</p></header>
+<nav><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#koleksi">Koleksi</a><a href="#kirim">Kirim Cerita</a></nav>
+
+<div class="hero" id="beranda"><h2>Ada suara yang mau didengar,</h2><p>Selamat datang di ruang belajar menulisku. Di sini aku menyimpan semua tulisanku, dan kamu bisa membaca & mengomentarinya.</p></div>
+
+<section id="tentang"><h3>Tentang / Profil</h3>
+<p style="text-align:center;">Svara Nara adalah ruang aman untuk menyimpan dan mendengar cerita. Kami percaya setiap suara layak didengar, tanpa harus dilihat.</p>
+
+<!-- BAGIAN SOSMED - BISA DITAMBAH SENDIRI -->
+<div style="text-align:center; margin-top:20px; border:1px dashed #d4af37; border-radius:12px; padding:15px;">
+  <p style="font-size:12px; letter-spacing:2px; color:#a07d1f; font-weight:bold; margin:0;">TEMUKAN SVARA NARA</p>
+  <div id="listSosmed" style="margin:10px 0;"></div>
+  <button onclick="tampilFormSosmed()" style="background:#d4af37; border:none; padding:9px 18px; border-radius:20px; font-weight:bold; cursor:pointer;">+ Tambah Akun Sosial Media</button>
+  <div id="formSosmed" style="display:none; margin-top:12px; text-align:left;">
+    <select id="pilihPlatform">
+      <option value="Instagram">📸 Instagram</option>
+      <option value="TikTok">🎵 TikTok</option>
+      <option value="YouTube">▶️ YouTube</option>
+      <option value="WhatsApp">💬 WhatsApp</option>
+      <option value="X / Twitter">𝕏 Twitter</option>
+    </select>
+    <input id="inputSosmed" type="text" placeholder="Contoh: @svaranara / nomor WA / link YouTube">
+    <button onclick="simpanSosmed()" style="background:#000; color:#fff; border:none; padding:11px 18px; border-radius:20px; font-weight:bold; cursor:pointer; width:100%;">Simpan</button>
+  </div>
+</div>
+<!-- AKHIR SOSMED -->
+</section>
+
+<section id="koleksi"><h3>Koleksi Tulisan</h3>
+<div class="kartu"><h4>Suara yang Tertinggal di Senja</h4><p>20 September 2026 • Senja di Manna, tempat aku belajar menulis.</p><a href="tulisan-1.html">Baca Selengkapnya →</a></div>
+</section>
+
+<section id="kirim"><h3>Kirim Cerita</h3><p style="text-align:center; font-size:14px; color:var(--muted);">Punya cerita? Kirim di sini, nanti aku baca.</p><input type="text" placeholder="Nama Anda"><textarea rows="4" placeholder="Tulis cerita kamu di sini..."></textarea><button class="btn">Kirim Cerita</button></section>
+
+<footer>© 2026 Svara Nara • Suara Yang Mendengarkan</footer>
+
+<script>
+  if(localStorage.getItem('tema') === 'dark'){ document.body.classList.add('dark'); document.getElementById('tombolTema').innerText = '☀️ Terang'; }
+  function gantiTema(){ document.body.classList.toggle('dark'); let gelap = document.body.classList.contains('dark'); localStorage.setItem('tema', gelap ? 'dark' : 'light'); document.getElementById('tombolTema').innerText = gelap ? '☀️ Terang' : '🌙 Gelap'; }
+
+  function tampilFormSosmed(){
+    let f = document.getElementById('formSosmed');
+    f.style.display = f.style.display === 'none' ? 'block' : 'none';
+  }
+  function simpanSosmed(){
+    let p = document.getElementById('pilihPlatform').value;
+    let u = document.getElementById('inputSosmed').value.trim();
+    if(!u){ alert('Isi dulu username-nya bes!'); return; }
+    let link = u;
+    if(p === 'Instagram' && !u.startsWith('http')) link = 'https://instagram.com/' + u.replace('@','');
+    if(p === 'TikTok' && !u.startsWith('http')) link = 'https://tiktok.com/' + u.replace('@','');
+    if(p === 'WhatsApp' && !u.startsWith('http')) link = 'https://wa.me/' + u.replace(/[^0-9]/g,'');
+    let el = document.createElement('a');
+    el.href = link; el.target = '_blank';
+    el.innerText = p + ' : ' + u;
+    el.style.cssText = 'display:inline-block; background:#d4af37; color:#000; padding:7px 14px; border-radius:20px; text-decoration:none; font-weight:bold; margin:4px; font-size:13px;';
+    document.getElementById('listSosmed').appendChild(el);
+    document.getElementById('inputSosmed').value = '';
+    document.getElementById('formSosmed').style.display = 'none';
+  }
+</script>
 </body>
 </html>
